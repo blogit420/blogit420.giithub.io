@@ -2,6 +2,7 @@ var app = angular.module('myApp',['ngRoute']);
 
 
 app.config(function($routeProvider,$locationProvider){
+    Stamplay.init();
     $locationProvider.hashPrefix('');
  $routeProvider
     .when('/',{
@@ -28,5 +29,18 @@ app.controller('myCtrl',function($scope,$http){
     }
     function failure(err){
         console.log(err);
+    }
+});
+app.controller('signupCtrl',function($scope){
+    $scope.nwUser={};
+    $scope.signup=function(){
+     Stamplay.User.signup($sope.newUser).then(suc,fail);
+        function suc(response)
+        {
+         console.log(response);
+        }
+        function fail(err){
+            console.log(err);
+        }
     }
 });
