@@ -1,0 +1,31 @@
+<html ng-app="myApp">
+<head>
+    <title>Blogit</title>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" href="/home/debayan/Desktop/app/bower_components/bootstrap/dist/css/bootstrap.min.css" type="text/css"/>
+    
+    <script type="text/javascript" src="/home/debayan/Desktop/app/bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/home/debayan/Desktop/app/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/home/debayan/Desktop/app/bower_components/stamplay-js-sdk/dist/stamplay.min.js"></script> 
+    <script type="text/javascript" src="/home/debayan/Desktop/app/bower_components/angular/angular.min.js"></script>
+      <script type="text/javascript" src="/home/debayan/Desktop/app/bower_components/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+        
+</head>
+<body ng-controller="myCtrl">
+   <div class="container-fluid">
+        <div ng-include="'menu.html'"></div>
+       <div ng-include="'jumbo.html'"></div>
+       
+       <!-- weatehr api -->
+       <div class="jumbotron">
+            <center><h1>Weather</h1></center>
+           <p><em>Tempetature:</em>{{weather.main.temp}}Kelvin</p>
+       </div>
+         <div ng-view></div>
+   </div>
+    
+</body >
+ 
+</html>
